@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>The Math Quiz Game</title>
+      <link rel="stylesheet" href="login.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="login_.js"></script>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login Form
+            </div>
+            <div class="title signup">
+               Login Form
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login - Player 1</label>
+               <label for="signup" class="slide signup">Login - Player 2</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="" class="login">
+                  <div class="field">
+                     <input id="player1_name" type="text" placeholder="User Name" >
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" >
+                  </div>
+                  
+                  <div class="signup-link">
+                     <a href="">Signup now for Player 2</a>
+                  </div>
+               </form>
+               <form action="game_page.html" class="signup">
+                  <div class="field">
+                     <input id="player2_name" type="text" placeholder="User Name" >
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password">
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input onclick="addUser()" type="submit" value="Login for both players">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>
